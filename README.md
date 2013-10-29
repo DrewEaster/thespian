@@ -1,5 +1,5 @@
-akka3d (pre-alpha)
-==================
+akka3d
+======
 
 A DDD, CQRS and event sourcing framework built on top of Akka
 
