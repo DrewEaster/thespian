@@ -20,3 +20,4 @@ TODO
 * Java API
 * Play! integration
 * Spray integration
+* Build on TravisCI and deploy artifact to some maven repository
