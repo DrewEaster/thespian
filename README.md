@@ -1,7 +1,7 @@
 akka3d
 ======
 
-A DDD, CQRS and event sourcing framework based on Akka
+A DDD, CQRS and event sourcing framework built on top of Akka
 
 Why the name?
 -------------
