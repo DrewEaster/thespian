@@ -10,6 +10,6 @@ TODO
 * Support for become/unbecome without breaking snapshoting
 * Snapshot scheduling
 * Add Akka cluster support for fully distributed aggregates - might take a while :-)
-* Support with ProcessManagers
+* Support with ProcessManagers (not sure what I really mean by this yet!)
 * Support for FSMs
 * Java API
