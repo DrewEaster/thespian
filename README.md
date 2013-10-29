@@ -13,3 +13,4 @@ TODO
 * Support with ProcessManagers (not sure what I really mean by this yet!)
 * Support for FSMs
 * Java API
+* Play! integration
