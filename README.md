@@ -15,7 +15,7 @@ It's an actor based framework for building DDD, CQRS and event sourcing applicat
 
 Initially, akka3d is more a collection of ideas and best practices for combining the actor model with DDD, CQRS and event sourcing. It does kind of represent a framework, but it's possibly a bit generous to call it one in its current form.
 
-This project aims to provide a viable alternative to traditional database backed CRUD solutions. No longer must we fight against business logic saturated services, anaemic domain models and bloated ORMs. 
+This project aims to provide a viable alternative to traditional database backed CRUD solutions. No longer must we fight against business logic saturated services, anaemic domain models and bloated ORMs.
 
 akka3d is the materialisation and extension of some ideas I first wrote about [here](http://www.dreweaster.com/blog/2013/10/27/Akka-DDD-CQRS-Event-Sourcing-And-Me/).
 
