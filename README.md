@@ -21,7 +21,7 @@ Close to being ready to use in anything other than prototyping contexts :-) And 
 TODO
 ----
 
-* Add Distributed PubSub style to event publishing - topic per aggregate root type. Read models subscribe to "feed" for particular aggregate root type
+* Add Distributed PubSub style to event publishing - topic per aggregate root type. Read models subscribe to "feed" for particular aggregate root type. Subscribe via DomainModel.
 * Support for become/unbecome without breaking snapshoting
 * Aggregate root timeouts (clear cache) - ReceiveTimeout
 * Snapshot scheduling
