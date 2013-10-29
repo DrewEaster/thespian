@@ -1,9 +1,8 @@
 package com.dreweaster.akka3d.example
 
 import akka.actor._
-import com.dreweaster.akka3d.domain.{DomainModel}
+import com.dreweaster.akka3d.domain.DomainModel
 import com.dreweaster.akka3d.example.customer.Customer
-import com.dreweaster.akka3d.example.customer.CustomerCommands.{ChangeCustomerAge, ChangeCustomerName, CreateCustomer}
 import java.util.UUID
 import com.dreweaster.akka3d.example.customer.CustomerEvents.{CustomerAgeChanged, CustomerNameChanged, CustomerCreated}
 import com.dreweaster.akka3d.example.customer.CustomerCommands.ChangeCustomerAge
