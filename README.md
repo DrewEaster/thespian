@@ -21,3 +21,4 @@ TODO
 * Play! integration
 * Spray integration
 * Build on TravisCI and deploy artifact to some maven repository
+* Create Typesafe Activator template that uses akka3d
