@@ -6,7 +6,17 @@ A DDD, CQRS and event sourcing framework based on Akka
 Why the name?
 -------------
 
-Because 3d is short for Domain Driven Design.
+Because 3d is short for Domain Driven Design (DDD).
+
+What is it?
+-----------
+
+It's an actor based framework for building DDD, CQRS and event sourcing applications. It's built using Akka and makes use of the quite amazing akka-persistence module.
+
+What is it not?
+---------------
+
+Close to being ready to use in anything other than prototyping contexts :-)
 
 TODO
 ----
