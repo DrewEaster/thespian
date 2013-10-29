@@ -16,7 +16,7 @@ It's an actor based framework for building DDD, CQRS and event sourcing applicat
 What is it not?
 ---------------
 
-Close to being ready to use in anything other than prototyping contexts :-)
+Close to being ready to use in anything other than prototyping contexts :-) And it only has single node support for now which is quite limiting.
 
 TODO
 ----
