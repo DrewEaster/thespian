@@ -12,7 +12,7 @@ TODO
 * Snapshot scheduling
 * DI integration (subcut?)
 * Add Akka cluster support for fully distributed aggregates - might take a while :-)
-* Support for services (what are these exactly?)
+* Support for services (what are these exactly?). How do aggregates access them. Subcut/DI?
 * Support with process managers (not sure what I really mean by this yet!)
 * Scheduling support - linked with process managers, e.g. timing out a ticket reservation
 * Support for FSMs
