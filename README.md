@@ -11,6 +11,7 @@ TODO
 * Snapshot scheduling
 * DI integration (subcut?)
 * Add Akka cluster support for fully distributed aggregates - might take a while :-)
+* Support for services (what are these exactly?)
 * Support with ProcessManagers (not sure what I really mean by this yet!)
 * Support for FSMs
 * Java API
