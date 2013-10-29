@@ -11,7 +11,7 @@ Because 3d is short for Domain Driven Design (DDD).
 What is it?
 -----------
 
-It's an actor based framework for building DDD, CQRS and event sourcing applications. It's built using Akka and makes use of the quite amazing akka-persistence module.
+It's an actor based framework for building DDD, CQRS and event sourcing applications. It's built using Akka and makes use of the quite amazing akka-persistence module. The design is influenced by a vision to have a 1:1 relationship between an Aggregate Root (AR) and an actor. And, importantly, it promotes a simplifies concurrency model whereby only one actor per aggregate root instance can ever exist at one time. 
 
 What is it not?
 ---------------
