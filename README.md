@@ -14,3 +14,4 @@ TODO
 * Support for FSMs
 * Java API
 * Play! integration
+* Spray integration
