@@ -13,6 +13,8 @@ What is it?
 
 It's an actor based framework for building DDD, CQRS and event sourcing applications. It's built on top of Akka and makes use of the simply awesome akka-persistence extension. The design is influenced by a vision to have a 1:1 relationship between an Aggregate Root (AR) and an actor. And, importantly, it promotes a simplified concurrency model whereby only one actor per aggregate root instance can exist at a time. 
 
+Initially, akka3d is more a collection of ideas and best practices for combining the actor model with DDD, CQRS and event sourcing. It does kind of represent a framework, but it's possibly a bit misleading to call it one as things currently stand.
+
 What is it not?
 ---------------
 
