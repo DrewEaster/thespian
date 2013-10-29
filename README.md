@@ -3,6 +3,11 @@ akka3d
 
 A DDD, CQRS and event sourcing framework based on Akka
 
+Why the name?
+-------------
+
+Because 3d is short for Domain Driven Design.
+
 TODO
 ----
 
