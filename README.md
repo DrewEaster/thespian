@@ -17,6 +17,8 @@ Initially, akka3d is more a collection of ideas and best practices for combining
 
 This project aims to provide a viable alternative to traditional database backed CRUD solutions. No longer must we fight against business logic saturated services, anaemic domain models and bloated ORMs. 
 
+akka3d is the materialisation and extension of some ideas I first wrote about [here](http://www.dreweaster.com/blog/2013/10/27/Akka-DDD-CQRS-Event-Sourcing-And-Me/).
+
 What is it not?
 ---------------
 
