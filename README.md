@@ -24,6 +24,8 @@ What is it not?
 
 Close to being ready to use in anything other than prototyping contexts :-) And it only has single node support for now which could be quite limiting.
 
+akka3d does not currently have a Java implementation - it is planned!
+
 A short example
 ---------------
 
