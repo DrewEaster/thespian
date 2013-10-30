@@ -24,6 +24,28 @@ What is it not?
 
 Close to being ready to use in anything other than prototyping contexts :-) And it only has single node support for now which could be quite limiting.
 
+A short example
+---------------
+
+This is just a very basic example of akka3d in use:
+```scala
+  val domainModel = DomainModel("my-domain") {
+    Customer
+  }
+
+  val readModel = domainModel.subscribe(Customer, CustomerReadModel.props)
+
+  val customerId = UUID.randomUUID
+  val customer = domainModel.aggregateRootOf(Customer, customerId)
+
+  customer ! CreateCustomer("Andrew", 33)
+  customer ! ChangeCustomerName("Andy")
+  customer ! ChangeCustomerAge(34)
+
+  (readModel ? GetCustomer(customerId)).map {
+    case Some(customer: CustomerDTO) => println(customer)
+  }
+```
 TODO
 ----
 
