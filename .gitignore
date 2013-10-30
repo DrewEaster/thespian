@@ -11,9 +11,11 @@
 project/boot
 target/
 journal/
+build/
 /logs
 .cache
 .classpath
 .project
+.gradle
 .settings
 .DS_Store
