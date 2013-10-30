@@ -56,13 +56,13 @@ public class HelloAkkaJava {
 
         // Wait 5 seconds for the reply with the 'greeting' message
         Greeting greeting1 = (Greeting) inbox.receive(Duration.create(5, TimeUnit.SECONDS));
-        System.out.println("com.dreweaster.akka3d.example.Greeting: " + greeting1.message);
+        System.out.println("com.dreweaster.thespian.example.Greeting: " + greeting1.message);
 
         // Change the greeting and ask for it again
         greeter.tell(new WhoToGreet("typesafe"), ActorRef.noSender());
         inbox.send(greeter, new Greet());
         Greeting greeting2 = (Greeting) inbox.receive(Duration.create(5, TimeUnit.SECONDS));
-        System.out.println("com.dreweaster.akka3d.example.Greeting: " + greeting2.message);
+        System.out.println("com.dreweaster.thespian.example.Greeting: " + greeting2.message);
 
         system.shutdown();
     }
