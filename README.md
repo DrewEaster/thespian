@@ -22,7 +22,7 @@ akka3d is the materialisation and extension of some ideas I first wrote about [h
 What is it not?
 ---------------
 
-Close to being ready to use in anything other than prototyping contexts :-) And it only has single node support for now which is quite limiting.
+Close to being ready to use in anything other than prototyping contexts :-) And it only has single node support for now which could be quite limiting.
 
 TODO
 ----
