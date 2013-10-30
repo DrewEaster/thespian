@@ -51,7 +51,9 @@ This is just a very basic example of akka3d in use:
 Credits
 -------
 
-Some of the concepts within akka3d were inspired by some code shared by Vaughn Vernon on his [blog](http://vaughnvernon.co).
+Some of the concepts within akka3d were inspired by some code shared by Vaughn Vernon on his [blog](http://vaughnvernon.co). Many thanks to him for the inspiration.
+
+As always, none of this would be possible without the true awesomeness of the Akka Team. Thanks to Roland, Patrik, Martin et al.
 
 TODO
 ----
