@@ -36,7 +36,7 @@ TODO
 * Add Akka cluster support for fully distributed aggregates - might take a while :-) But this could be of limited use without it
 * Support for services (what are these exactly?). How do aggregates access them. Subcut/DI? Services as actors?
 * Support with process managers (not sure what I really mean by this yet!). Actor that receives events and sends commands (and is persistent)...
-* Scheduling support - linked with process managers, e.g. timing out a ticket reservation
+* Scheduling support - linked with process managers, e.g. timing out a ticket reservation. Must support durable scheduling - i.e. scheduled jobs must survive restarts/crashes
 * Support for FSMs
 * What the hell to do about errors, e.g. trying to send a Create to an existing entity. Error stream?! This is a wider CQRS topic
 * Java API
