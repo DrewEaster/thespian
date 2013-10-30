@@ -1,7 +1,7 @@
 Thespian
 ========
 
-A DDD, CQRS and event sourcing framework built on top of Akka
+A DDD, CQRS and event sourcing framework built on top of Akka.
 
 Why the name?
 -------------
