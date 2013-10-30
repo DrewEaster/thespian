@@ -48,6 +48,11 @@ This is just a very basic example of akka3d in use:
     case Some(customer: CustomerDTO) => println(customer)
   }
 ```
+Credits
+-------
+
+Some of the concepts within akka3d were inspired by some code shared by Vaughn Vernon on his [blog](http://vaughnvernon.co).
+
 TODO
 ----
 
