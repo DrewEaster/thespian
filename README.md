@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/[DrewEaster]/[thespian].png)](https://travis-ci.org/[DrewEaster]/[thespian])
+[![Build Status](https://travis-ci.org/DrewEaster/thespian.png?branch=master)](https://travis-ci.org/DrewEaster/thespian)
 
 Thespian
 ========
