@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/DrewEaster/thespian.png?branch=master)](https://travis-ci.org/DrewEaster/thespian)
+
 Thespian
 ========
 
@@ -16,6 +18,8 @@ It's an actor based framework for building DDD, CQRS and event sourcing applicat
 Initially, Thespian is more an exploration of ideas and best practices for combining the actor model with DDD, CQRS and event sourcing. It does kind of represent a framework, but it's possibly a bit generous to call it one in its current form.
 
 This project aims to provide a viable alternative to traditional database backed CRUD solutions. No longer must we fight against business logic saturated services, anaemic domain models and bloated ORMs.
+
+In the good old days, OO programming was all about message passing and, somewhere along the way, these concepts got lost in translation under a mountain of getters and setters. The actor model brings us right back to the true concepts of OO design - encapsulation of state, and manipulation of state via message passing. This all contributes towards a much cleaner, fully object-oriented domain layer. The aim of Thespian is to evangelise a return to better OO design using Eric Evans' Domain Driven Design (DDD) principles as its guiding light. Combining DDD principles, CQRS and event sourcing with the actor model (Akka), is what brings the vision to life. 
 
 Thespian is the materialisation and extension of some ideas I first wrote about [here](http://www.dreweaster.com/blog/2013/10/27/Akka-DDD-CQRS-Event-Sourcing-And-Me/).
 
