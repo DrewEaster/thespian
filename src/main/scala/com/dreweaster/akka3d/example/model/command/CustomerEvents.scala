@@ -1,4 +1,4 @@
-package com.dreweaster.akka3d.example.customer
+package com.dreweaster.akka3d.example.model.command
 
 object CustomerEvents {
 

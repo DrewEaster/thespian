@@ -6,6 +6,8 @@ scalaVersion := "2.10.2"
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % "2.3-M1",
+  "com.typesafe.akka" %% "akka-cluster" % "2.3-M1",
+  "com.typesafe.akka" %% "akka-contrib" % "2.3-M1",
   "com.typesafe.akka" %% "akka-persistence-experimental" % "2.3-M1",
   "com.typesafe.akka" %% "akka-testkit" % "2.3-M1",
   "org.scalatest" %% "scalatest" % "1.9.1" % "test",

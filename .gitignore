@@ -10,8 +10,10 @@
 /project/plugins/project
 project/boot
 target/
+journal/
 /logs
 .cache
 .classpath
 .project
 .settings
+.DS_Store

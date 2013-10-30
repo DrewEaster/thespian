@@ -3,32 +3,35 @@ package com.dreweaster.akka3d.domain
 import akka.persistence.{SnapshotOffer, EventsourcedProcessor}
 import akka.actor.{Actor, Props, ActorRef, ActorSystem}
 import java.util.UUID
+import akka.contrib.pattern.{DistributedPubSubExtension, DistributedPubSubMediator}
+import akka.contrib.pattern.DistributedPubSubMediator.Publish
 
 case object SaveSnapshot
 
 case class Event(id: UUID, sequenceNumber: Long, data: Any)
 
-trait AggregateRootState {
-  def update: Any => AggregateRootState
-}
+trait AggregateRoot extends EventsourcedProcessor {
 
-trait AggregateRoot[S <: AggregateRootState] extends EventsourcedProcessor {
+  val mediator = DistributedPubSubExtension(context.system).mediator
+
   val uuid = UUID.fromString(context.self.path.name)
 
-  var state: S
+  val topic = getClass.getName
 
-  def updateState(event: Any) {
-    state = state.update(event).asInstanceOf[S]
-  }
+  def fetchState: Any
 
-  val receiveCommand = {
-    case SaveSnapshot => saveSnapshot(state)
-    case _ => handleCommand
+  def applyState: Any => Unit
+
+  def loadState: Any => Unit
+
+  val receiveCommand: Receive = {
+    case SaveSnapshot => saveSnapshot(fetchState)
+    case msg => handleCommand(msg)
   }
 
   val receiveReplay: Receive = {
-    case SnapshotOffer(metadata, snapshot: S) => state = snapshot
-    case event => updateState(event)
+    case SnapshotOffer(metadata, snapshot: Any) => loadState(snapshot)
+    case event => applyState(event)
   }
 
   def unitOfWork(events: Any*) = {
@@ -38,8 +41,8 @@ trait AggregateRoot[S <: AggregateRootState] extends EventsourcedProcessor {
   def handleCommand: Receive
 
   private def eventHandler(event: Any) = {
-    updateState(event)
-    context.system.eventStream.publish(Event(uuid, currentPersistentMessage.get.sequenceNr, event))
+    applyState(event)
+    mediator ! Publish(topic, Event(uuid, currentPersistentMessage.get.sequenceNr, event))
   }
 }
 
@@ -68,6 +71,10 @@ class DomainModel(name: String, types: Seq[AggregateRootType]) {
     }
   }
 
+  def subscribe(aggregateRootType: AggregateRootType, subscriberProps: Props) = {
+    system.actorOf(ReadModelSupervisor.props(aggregateRootType, subscriberProps))
+  }
+
   def shutdown() {
     system.shutdown()
   }
@@ -92,5 +99,31 @@ class AggregateRootCache(aggregateRootType: AggregateRootType) extends Actor {
         context.actorOf(Props(aggregateRootType.typeInfo), message.id.toString)
       }
       aggregate.tell(message.command, message.sender)
+  }
+}
+
+object ReadModelSupervisor {
+  def props(aggregateRootType: AggregateRootType, subscriberProps: Props) =
+    Props.create(classOf[ReadModelSupervisor], aggregateRootType, subscriberProps)
+}
+
+class ReadModelSupervisor(val aggregateRootType: AggregateRootType, subscriberProps: Props) extends Actor {
+
+  import DistributedPubSubMediator.{Subscribe, SubscribeAck}
+
+  val mediator = DistributedPubSubExtension(context.system).mediator
+
+  val subscriber = context.actorOf(subscriberProps)
+
+  val topic = aggregateRootType.getClass.getName.replaceAll("\\$", "")  // FIXME: Hack here to remove $
+
+  mediator ! Subscribe(topic, self)
+
+  def receive: Receive = {
+    case ack@SubscribeAck(Subscribe(`topic`, `self`)) => context become ready
+  }
+
+  def ready: Receive = {
+    case msg: Any => subscriber forward msg
   }
 }
