@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/[DrewEaster]/[thespian].png)](https://travis-ci.org/[DrewEaster]/[thespian])
+
 Thespian
 ========
 
