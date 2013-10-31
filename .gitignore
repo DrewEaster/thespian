@@ -11,6 +11,7 @@
 project/boot
 target/
 journal/
+out/
 build/
 /logs
 .cache

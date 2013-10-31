@@ -22,10 +22,10 @@ dependencies {
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: "file://localhost/Users/aeaster/projects/dreweaster.github.io/repo/snapshots")
+            repository(url: "file://localhost/Users/andrew/projects/thespian/deploy/repo/snapshots")
             pom.groupId = 'com.dreweaster'
             pom.version = project.version
-            pom.artifactId = 'thespian'
+            pom.artifactId = 'thespian_2.10'
             pom.project {
                 licenses {
                     license {
