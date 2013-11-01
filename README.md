@@ -74,6 +74,7 @@ TODO
 * Scheduling support - linked with process managers, e.g. timing out a ticket reservation. Must support durable scheduling - i.e. scheduled jobs must survive restarts/crashes
 * Support for FSMs
 * What the hell to do about errors, e.g. trying to send a Create to an existing entity. Error stream?! This is a wider CQRS topic
+* I'd like to see whether it's possible to introduce a short-term subscription (with timeout) api - to listen for read model being updated following command submission
 * Java API
 * Play! integration
 * Spray integration
