@@ -66,6 +66,8 @@ TODO
 * Support for become/unbecome without breaking snapshoting
 * Aggregate root timeouts (clear cache) - ReceiveTimeout
 * Snapshot scheduling
+* Support for intermediate state recovery (consideration that people might want to do this "offline").
+* Need to think about how people can rebuild read models easily
 * DI integration (subcut?)
 * Avoid missing published events in read models?
 * Add Akka cluster support for fully distributed aggregates - might take a while :-) But this could be of limited use without it
