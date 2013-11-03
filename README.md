@@ -66,6 +66,8 @@ TODO
 * Support for become/unbecome without breaking snapshoting
 * Aggregate root timeouts (clear cache) - ReceiveTimeout
 * Snapshot scheduling
+* Support for intermediate state recovery (consideration that people might want to do this "offline").
+* Need to think about how people can rebuild read models easily
 * DI integration (subcut?)
 * Avoid missing published events in read models?
 * Add Akka cluster support for fully distributed aggregates - might take a while :-) But this could be of limited use without it
@@ -73,7 +75,9 @@ TODO
 * Support with process managers (not sure what I really mean by this yet!). Actor that receives events and sends commands (and is persistent)...
 * Scheduling support - linked with process managers, e.g. timing out a ticket reservation. Must support durable scheduling - i.e. scheduled jobs must survive restarts/crashes
 * Support for FSMs
+* Support for publishing events direct to external message queues
 * What the hell to do about errors, e.g. trying to send a Create to an existing entity. Error stream?! This is a wider CQRS topic
+* I'd like to see whether it's possible to introduce a short-term subscription (with timeout) api - to listen for read model being updated following command submission
 * Java API
 * Play! integration
 * Spray integration
