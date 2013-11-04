@@ -52,12 +52,6 @@ This is just a very basic example of Thespian in use:
     case Some(customer: CustomerDTO) => println(customer)
   }
 ```
-
-Where does Thespian fit in?
----------------------------
-
-![Thespian overview](https://raw.github.com/DrewEaster/thespian/master/thespian-overview.png)
-
 Credits
 -------
 
