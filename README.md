@@ -21,7 +21,7 @@ This project aims to provide a viable alternative to traditional database backed
 
 In the good old days, OO programming was all about message passing and, somewhere along the way, these concepts got lost in translation under a mountain of getters and setters. The actor model brings us right back to the true concepts of OO design - encapsulation of state, and manipulation of state via message passing. This all contributes towards a much cleaner, fully object-oriented domain layer. The aim of Thespian is to evangelise a return to better OO design using Eric Evans' Domain Driven Design (DDD) principles as its guiding light. Combining DDD principles, CQRS and event sourcing with the actor model (Akka), is what brings the vision to life. 
 
-A potentially overlooked benefit of CQRS and eventsourcing is how compatible these patterns are with TDD. When viewing business logic as simply 'Command in' -> 'Events out', it becomes clear very quickly how testable your code can be. Thespian plans to maximize this benefit, allowing engineers to write more robust software.
+A potentially overlooked benefit of CQRS and eventsourcing is how compatible these patterns are with TDD. When viewing business logic as simply 'Command in' -> 'Events out', it becomes clear very quickly how testable your code can be. Thespian plans to maximize this benefit, allowing engineers to write not just more robust software, but much cleaner tests as well.
 
 Thespian is the materialisation and extension of some ideas I first wrote about [here](http://www.dreweaster.com/blog/2013/10/27/Akka-DDD-CQRS-Event-Sourcing-And-Me/).
 
