@@ -78,6 +78,7 @@ TODO
 * Support with process managers (not sure what I really mean by this yet!). Actor that receives events and sends commands (and is persistent)...
 * Scheduling support - linked with process managers, e.g. timing out a ticket reservation. Must support durable scheduling - i.e. scheduled jobs must survive restarts/crashes
 * Support for FSMs
+* Handling events from another bounded context - e.g. events not belonging to any aggregate root in current domain? Hmmm...something must "own" or know about certain commands and events, even a process manager.
 * Support for publishing events direct to external message queues
 * What the hell to do about errors, e.g. trying to send a Create to an existing entity. Error stream?! This is a wider CQRS topic
 * I'd like to see whether it's possible to introduce a short-term subscription (with timeout) api - to listen for read model being updated following command submission
