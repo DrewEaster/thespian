@@ -87,6 +87,7 @@ TODO
 * Spray integration
 * Build on TravisCI and deploy artifact to some maven repository
 * Create Typesafe Activator template that uses Thespian
+* Application Services are probably out of scope - it's up to implementors if they wish to use application services as a facade in front of the DomainModel. 
 
 License
 -------
