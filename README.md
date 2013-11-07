@@ -88,6 +88,7 @@ TODO
 * Build on TravisCI and deploy artifact to some maven repository
 * Create Typesafe Activator template that uses Thespian
 * I'm thinking application services are kind of out of scope - domain and infrastructure services are in scope. An application service is probably just a facade in front of the domain layer - that's up to implementors. Internally, aggregates and process managers should just use domain model directly.
+* Add application service concept to example?
 
 License
 -------
