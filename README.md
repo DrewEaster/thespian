@@ -72,7 +72,7 @@ TODO
 * Need to think about how people can rebuild read models easily
 * Testing support - testing command handling without persistence
 * DI integration (subcut?)
-* Avoid missing published events in read models?
+* Avoid missing published events in read models? - persistent pub/sub (Kafka...)
 * Add Akka cluster support for fully distributed aggregates - might take a while :-) But this could be of limited use without it
 * Support for services (what are these exactly?). How do aggregates access them. Subcut/DI? Services as actors?
 * Support with process managers (not sure what I really mean by this yet!). Actor that receives events and sends commands (and is persistent)...
