@@ -65,6 +65,7 @@ TODO
 ----
 
 * Convert to use Akka Extension system.
+* Think about back pressure solution to deal with load
 * Add Distributed PubSub style to event publishing - topic per aggregate root type. Read models subscribe to "feed" for particular aggregate root type. Subscribe via DomainModel.
 * Support for become/unbecome without breaking snapshoting
 * Aggregate root timeouts (clear cache) - ReceiveTimeout
