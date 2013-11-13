@@ -12,19 +12,19 @@ import akka.util.Timeout
 import akka.pattern.ask
 import scala.concurrent.ExecutionContext
 import ExecutionContext.Implicits.global
+import com.dreweaster.thespian.DomainDriven
+import akka.actor.ActorSystem
 
-object Example extends App {
+object Example extends App with DomainDriven {
+
+  val system = ActorSystem("thespian-example")
 
   implicit val timeout = Timeout(5 seconds)
 
-  val domainModel = DomainModel("thespian-example") {
-    Customer
-  }
-
-  val readModel = domainModel.subscribe(Customer, CustomerReadModel.props)
+  val readModel = subscribe(Customer, CustomerReadModel.props)
 
   val customerId = UUID.randomUUID
-  val customer = domainModel.aggregateRootOf(Customer, customerId)
+  val customer = aggregateRootOf(Customer, customerId)
 
   Thread.sleep(2500)
 
@@ -35,9 +35,9 @@ object Example extends App {
   Thread.sleep(2500)
 
   (readModel ? GetCustomer(customerId)).map {
-    case response => println(response)
+    case response => println("Event: " + response)
   }
 
   Thread.sleep(2500)
-  domainModel.shutdown()
+  system.shutdown()
 }

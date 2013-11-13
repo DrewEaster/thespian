@@ -36,4 +36,10 @@ class Customer extends AggregateRoot {
       CustomerAgeChanged(newAge)
     }
   }
+
+  def handleEvent: Receive = {
+    case _ => {
+      // TODO: Send welcome email to customer here
+    }
+  }
 }
