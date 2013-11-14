@@ -70,7 +70,7 @@ TODO
 ----
 
 * Convert to use Akka Extension system.
-* Consider introducing Aggregate Trait that abstracts away actor altogether.
+* Consider introducing Aggregate Trait that abstracts away actor altogether. This could be seen somewhat like in the same way Play! controllers abstract away the underlying implementation (which I believe is actor based). Could still provide access to actor system if implementor really wants.
 * Think about back pressure solution to deal with load
 * Add Distributed PubSub style to event publishing - topic per aggregate root type. Read models subscribe to "feed" for particular aggregate root type. Subscribe via DomainModel.
 * Support for become/unbecome without breaking snapshoting
