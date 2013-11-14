@@ -37,22 +37,27 @@ A short example
 
 This is just a very basic example of Thespian in use:
 ```scala
-  val domainModel = DomainModel("my-domain") {
-    Customer
-  }
+object Example extends App with DomainDriven {
 
-  val readModel = domainModel.subscribe(Customer, CustomerReadModel.props)
+  val system = ActorSystem("thespian-example")
+
+  implicit val timeout = Timeout(5 seconds)
+
+  val readModel = subscribe(Customer, CustomerReadModel.props)
 
   val customerId = UUID.randomUUID
-  val customer = domainModel.aggregateRootOf(Customer, customerId)
+  val customer = aggregateRootOf(Customer, customerId)
 
   customer ! CreateCustomer("Andrew", 33)
   customer ! ChangeCustomerName("Andy")
   customer ! ChangeCustomerAge(34)
 
   (readModel ? GetCustomer(customerId)).map {
-    case Some(customer: CustomerDTO) => println(customer)
+    case response => println("Event: " + response)
   }
+
+  system.shutdown()
+}
 ```
 Credits
 -------
