@@ -75,6 +75,7 @@ TODO
 * Add Distributed PubSub style to event publishing - topic per aggregate root type. Read models subscribe to "feed" for particular aggregate root type. Subscribe via DomainModel.
 * Support for become/unbecome without breaking snapshoting
 * Aggregate root timeouts (clear cache) - ReceiveTimeout
+* Command ACK/NACK - async of course!
 * Snapshot scheduling
 * Support for intermediate state recovery (consideration that people might want to do this "offline").
 * Need to think about how people can rebuild read models easily
