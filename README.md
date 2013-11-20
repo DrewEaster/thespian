@@ -100,6 +100,7 @@ TODO
 * I'm thinking application services are kind of out of scope - domain and infrastructure services are in scope. An application service is probably just a facade in front of the domain layer - that's up to implementors. Internally, aggregates and process managers should just use domain model directly.
 * Add application service concept to example?
 * How to deal with backward compatibility? i.e. events changing structure over time - certain amount of burden on framework user here...
+* Some kind of postStartup (after snapshot/event replay) to allow logic to be invoked post startup?
 
 License
 -------
