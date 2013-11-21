@@ -76,6 +76,7 @@ TODO
 * Support for become/unbecome without breaking snapshoting
 * Aggregate root timeouts (clear cache) - ReceiveTimeout
 * Command ACK/NACK - async of course!
+* Command correlation ids - should that be up to client - interesting...
 * Snapshot scheduling
 * Support for intermediate state recovery (consideration that people might want to do this "offline").
 * Need to think about how people can rebuild read models easily
