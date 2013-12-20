@@ -103,6 +103,7 @@ TODO
 * How to deal with backward compatibility? i.e. events changing structure over time - certain amount of burden on framework user here...
 * Some kind of postStartup (after snapshot/event replay) to allow logic to be invoked post startup?
 * How to deal with event classes changing over time - adapter pipeline?
+* Ensuring idempotency of command handling or filtering out duplicate commands
 
 License
 -------
