@@ -2,7 +2,7 @@ package com.dreweaster.thespian
 
 import com.typesafe.config.Config
 import akka.actor._
-import com.dreweaster.thespian.domain.{Event, AggregateRootType, DomainModel}
+import com.dreweaster.thespian.domain.{Command, AggregateFactory, Event, DomainModel}
 import com.dreweaster.thespian.example.model.command.Customer
 import java.util.UUID
 import scala.concurrent.duration.Duration
@@ -11,19 +11,21 @@ trait DomainDriven {
   val system: ActorSystem
   lazy val domainModel = Thespian(system).domainModel
 
-  def aggregateRootOf(aggregateRootType: AggregateRootType, id: UUID) = {
-    domainModel.aggregateRootOf(aggregateRootType, id)
+  implicit def anyToCommand(data: Any) = Command(data = data)
+
+  def aggregateRootOf(factory: AggregateFactory, id: UUID) = {
+    domainModel.aggregateRootOf(factory, id)
   }
 
   def processManagerOf = ???
 
-  def subscribe(aggregateRootType: AggregateRootType, subscriberProps: Props) = {
-    domainModel.subscribe(aggregateRootType, subscriberProps)
+  def subscribe(factory: AggregateFactory, subscriberProps: Props) = {
+    domainModel.subscribe(factory, subscriberProps)
   }
 
-  def publish(event: Event, aggregateRootType: AggregateRootType) = ???
+  def publish(event: Event, factory: AggregateFactory) = ???
 
-  def schedule(message:Any, id:UUID, processManager: AggregateRootType, duration:Duration) = ???
+  def schedule(message:Any, id:UUID, processManager: AggregateFactory, duration:Duration) = ???
 }
 
 trait DomainDrivenActor extends DomainDriven {

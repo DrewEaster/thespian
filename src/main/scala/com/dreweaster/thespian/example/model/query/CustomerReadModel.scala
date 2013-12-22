@@ -19,14 +19,14 @@ class CustomerReadModel extends Actor {
 
   def receive = {
     case GetCustomer(id) => sender ! model.get(id)
-    case Event(id, seqNum, CustomerCreated(name, age)) => model.put(id, CustomerDTO(id, seqNum, name, age))
-    case Event(id, seqNum, CustomerNameChanged(newName)) => {
-      val customer = model(id)
-      if (customer != null) model.put(id, customer.copy(name = newName, seqNum = seqNum))
+    case e@Event(_, _, _, CustomerCreated(name, age)) => model.put(e.id, CustomerDTO(e.id, e.sequenceNumber, name, age))
+    case e@Event(_, _, _, CustomerNameChanged(newName)) => {
+      val customer = model(e.id)
+      if (customer != null) model.put(e.id, customer.copy(name = newName, seqNum = e.sequenceNumber))
     }
-    case Event(id, seqNum, CustomerAgeChanged(newAge)) => {
-      val customer = model(id)
-      if (customer != null) model.put(id, customer.copy(age = newAge, seqNum = seqNum))
+    case e@Event(_, _, _, CustomerAgeChanged(newAge)) => {
+      val customer = model(e.id)
+      if (customer != null) model.put(e.id, customer.copy(age = newAge, seqNum = e.sequenceNumber))
     }
   }
 }

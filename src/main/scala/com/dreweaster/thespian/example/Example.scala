@@ -1,6 +1,6 @@
 package com.dreweaster.thespian.example
 
-import com.dreweaster.thespian.domain.DomainModel
+import com.dreweaster.thespian.domain.{CommandNack, CommandAck, Command, DomainModel}
 import java.util.UUID
 import com.dreweaster.thespian.example.model.command.{CustomerCommands, Customer}
 import CustomerCommands.ChangeCustomerAge
@@ -35,7 +35,7 @@ object Example extends App with DomainDriven {
   Thread.sleep(2500)
 
   (readModel ? GetCustomer(customerId)).map {
-    case response => println("Event: " + response)
+    case Some(customerDTO) => println("GetCustomer: " + customerDTO)
   }
 
   Thread.sleep(2500)
