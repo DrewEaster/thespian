@@ -13,7 +13,7 @@ Because thespians are actors, Akka is an actor based framework, and I was trying
 What is it?
 -----------
 
-It's an actor based framework for building DDD, CQRS and event sourcing applications. It's built on top of Akka and makes use of the simply awesome [akka-persistence](http://doc.akka.io/docs/akka/snapshot/scala/persistence.html) extension (and many other Akka goodies). The design is influenced by a vision to have a 1:1 relationship between an Aggregate Root (AR) and an actor. And, importantly, it promotes a simplified concurrency model whereby only one actor per aggregate root instance can exist at a time. 
+It's an actor based framework for building DDD, CQRS and event sourcing applications. It's built on top of Akka and makes use of the simply awesome [akka-persistence](http://doc.akka.io/docs/akka/snapshot/scala/persistence.html) extension (and many other Akka goodies). The design is influenced by a vision to have a 1:1 relationship between an Aggregate Root (AR) and an actor. And, importantly, it promotes a simplified concurrency model whereby only one actor per aggregate root instance can exist at a time (after all, Aggregate Roots are our consistency boundary in DDD). 
 
 Initially, Thespian is more an exploration of ideas and best practices for combining the actor model with DDD, CQRS and event sourcing. It does kind of represent a framework, but it's possibly a bit generous to call it one in its current form.
 
